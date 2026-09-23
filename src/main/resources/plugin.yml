@@ -1,0 +1,94 @@
+name: Zapisy
+version: '1.1.0'
+main: pl.zapisy.ZapisyPlugin
+api-version: '26.2'
+description: Lista zapisanych graczy + turniej drabinkowy
+
+commands:
+  zapisz:
+    description: Zapisuje Cię na listę
+    usage: /zapisz
+    permission: zapisy.zapisz
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  wypisz:
+    description: Wypisuje Cię z listy
+    usage: /wypisz
+    permission: zapisy.wypisz
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  zapisani:
+    description: Pokazuje wszystkich zapisanych graczy
+    usage: /zapisani
+    permission: zapisy.zapisani
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  resetlisty:
+    description: Czyści listę zapisanych graczy
+    usage: /resetlisty
+    permission: zapisy.resetlisty
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  zamknijzapisy:
+    description: Zamyka zapisy - nikt nie może użyć /zapisz
+    usage: /zamknijzapisy
+    permission: zapisy.zamknijzapisy
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  otworzzapisy:
+    description: Otwiera zapisy - gracze mogą znów użyć /zapisz
+    usage: /otworzzapisy
+    permission: zapisy.otworzzapisy
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  stworzturniej:
+    description: Tworzy drabinkę turniejową z listy zapisanych graczy
+    usage: /stworzturniej
+    permission: zapisy.stworzturniej
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  wygral:
+    description: Oznacza zwycięzcę bieżącego meczu w turnieju
+    usage: /wygral <gracz>
+    permission: zapisy.wygral
+    permission-message: "§cNie masz uprawnień do tej komendy."
+  turniej:
+    description: Pokazuje aktualną drabinkę turniejową
+    usage: /turniej
+    permission: zapisy.turniej
+    permission-message: "§cNie masz uprawnień do tej komendy."
+
+permissions:
+  zapisy.zapisz:
+    description: Pozwala użyć /zapisz
+    default: false
+  zapisy.wypisz:
+    description: Pozwala użyć /wypisz
+    default: false
+  zapisy.zapisani:
+    description: Pozwala użyć /zapisani
+    default: false
+  zapisy.resetlisty:
+    description: Pozwala użyć /resetlisty
+    default: false
+  zapisy.zamknijzapisy:
+    description: Pozwala użyć /zamknijzapisy
+    default: false
+  zapisy.otworzzapisy:
+    description: Pozwala użyć /otworzzapisy
+    default: false
+  zapisy.stworzturniej:
+    description: Pozwala użyć /stworzturniej
+    default: false
+  zapisy.wygral:
+    description: Pozwala użyć /wygral
+    default: false
+  zapisy.turniej:
+    description: Pozwala użyć /turniej (podgląd drabinki)
+    default: true
+  zapisy.*:
+    description: Wszystkie uprawnienia pluginu Zapisy
+    default: false
+    children:
+      zapisy.zapisz: true
+      zapisy.wypisz: true
+      zapisy.zapisani: true
+      zapisy.resetlisty: true
+      zapisy.zamknijzapisy: true
+      zapisy.otworzzapisy: true
+      zapisy.stworzturniej: true
+      zapisy.wygral: true
+      zapisy.turniej: true
