@@ -1,0 +1,3 @@
+# Czy gracze mogą się zapisywać komendą /zapisz.
+# Zmieniasz to komendami /zamknijzapisy i /otworzzapisy (admin).
+signups-open: true
